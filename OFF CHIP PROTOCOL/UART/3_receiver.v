@@ -31,7 +31,7 @@ parameter IDLE=2'b00,START=2'b01,DATA=2'b10,STOP=2'b11;
           nxt_state=DATA;
       end 
        STOP:begin
-         if(rx_en)
+         if(rx_en && rx==0)
           nxt_state=IDLE;
         else 
           nxt_state=STOP;
